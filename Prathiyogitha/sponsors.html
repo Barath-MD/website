@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* Fullscreen Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Top Image */
+        .top-image {
+            position: fixed;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            display: block;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .top-image.hidden {
+            opacity: 0;
+        }
+
+        /* Sidebar */
+        .offcanvas {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        .offcanvas-body a {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .offcanvas-body a:hover {
+            background-color: #ff5722;
+        }
+
+        /* Sidebar Toggle Button */
+        .menu-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            font-size: 40px;
+            background: transparent;
+            border: none;
+            color: white;
+            z-index: 1050;
+        }
+
+        /* Responsive Grid Layout */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 180px auto 0;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #ff5722;
+            transition: box-shadow 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 40px #ff5722;
+        }
+
+        /* Image Wrapper - Ensures Cropping */
+        .image-wrapper {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-wrapper img {
+            width: 110%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #f66409;
+        }
+
+        .card p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* Marquee for Sponsors */
+        .marquee-container {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 0;
+            font-size: 18px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        marquee {
+            font-weight: bold;
+            color: #f66409;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Sidebar Toggle Button -->
+    <button class="btn menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+        ☰
+    </button>
+
+    <!-- Top Image -->
+    <img src="sps.png" alt="Top Banner" class="top-image" id="topImage">
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header">
+            <h4><button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button></h4>
+        </div>
+        <div class="offcanvas-body">
+            <h3><a href="home.html">Home</a></h3>
+            <h3><a href="events.html">Events & Workshop</a></h3>
+            <h3><a href="#">Sponsors</a></h3>
+            <h3><a href="about.html">About Us</a></h3>
+            <h3><a href="contact.html">Contact</a></h3>
+        </div>
+    </div>
+
+    <!-- Responsive Cards Grid Layout -->
+    <div class="cards-container">
+        <div class="card">
+            <div class="image-wrapper">
+                <img src="SPO3.png" alt="Logo 1">
+            </div>
+            <h3>TITLE SPONSOR</h3>
+            <p>TRIP FACTORY.IN  COIMBATORE</p>
+        </div>
+        <div class="card">
+            <div class="image-wrapper">
+                <img src="HSSPO.png" alt="Logo 3">
+            </div>
+            <h3>HOSPITALITY PARTNER</h3>
+            <p>VAARAM VAARAM VIRUNDHU</p>
+        </div>
+        <div class="card">
+            <div class="image-wrapper">
+                <img src="parith.png" alt="Logo 4">
+            </div>
+            <h3>MEDIA PARTNER</h3>
+            <p>KEC PARITHABANGAL</p>
+            <P>  </P>
+            <P>  </P>
+        </div>
+        <div class="card">
+            <div class="image-wrapper">
+                <img src="blink.png" alt="Logo 5">
+            </div>
+            <h3>MEDIA PARTNER</h3>
+            <p>KEC BLINDSPOT</p>
+            <P>  </P>
+            <P>   </P>
+        </div>
+    </div>
+
+    <!-- Marquee for Sponsors -->
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="left">
+            <span> TITLE SPONSOR: TRIP FACTORY.IN | HOSPITALITY PARTNER: VAARAM VAARAM VIRUNDHU | MEDIA PARTNER: KEC PARITHABANGAL | MEDIA PARTNER: KEC BLINDSPOT </span>
+        </marquee>
+    </div>
+            <!-- JavaScript for Scroll Hide Effect -->
+            <script>
+                let lastScrollTop = 0;
+                const topImage = document.getElementById("topImage");
+        
+                window.addEventListener("scroll", function () {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+                    if (scrollTop > lastScrollTop) {
+                        topImage.classList.add("hidden");
+                    } else {
+                        topImage.classList.remove("hidden");
+                    }
+        
+                    lastScrollTop = scrollTop;
+                });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const menuButton = document.querySelector(".menu-btn");
+                    const offCanvas = document.getElementById("sidebar");
+        
+                    offCanvas.addEventListener("show.bs.offcanvas", function () {
+                        menuButton.style.display = "none";
+                    });
+                    offCanvas.addEventListener("hidden.bs.offcanvas", function () {
+                        menuButton.style.display = "block";
+                    });
+                });
+            </script>
+</body>
+</html>

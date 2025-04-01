@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* Fullscreen Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Top Image */
+        .top-image {
+            position: fixed;
+            top: 5%;
+            right: 23%;
+            width: 60%;
+            display: block;
+            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        /* Hide Image on Scroll */
+        .top-image.hidden {
+            opacity: 0;
+        }
+
+        /* Sidebar */
+        .offcanvas {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        .offcanvas-body a {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .offcanvas-body a:hover {
+            background-color: #ff5722;
+        }
+
+        /* Buttons */
+        .buttons a {
+            text-decoration: none;  /* Removes the underline */
+        }
+
+        .buttons button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #ff5722;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Sidebar Toggle Button */
+        .menu-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            font-size: 40px;
+            background: transparent;
+            border: none;
+            color: white;
+            z-index: 1050;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #db8713a5; /* Light orange shade */
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-body p {
+            text-align: center;
+        }
+
+        /* Move product cards section 20% down */
+        .product-section {
+            margin-top: 20vh;
+        }
+
+        .ffw-bold {
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Top Image -->
+    <img src="technical font.png" alt="Top Banner" class="top-image" id="topImage">
+
+    <!-- Sidebar Toggle Button -->
+    <button class="btn menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+        ☰
+    </button>
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header">
+            <h4><button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button></h4>
+        </div>
+        <div class="offcanvas-body">
+            <h3><a href="home.html">Home</a></h3>
+            <h3><a href="#">Events & Workshop</a></h3>
+            <h3><a href="sponsors.html">Sponsors</a></h3>
+            <h3><a href="about.html">About Us</a></h3>
+            <h3><a href="contact.html">Contact</a></h3>
+        </div>
+    </div>
+
+    <!-- Product Cards Section -->
+    <div class="container product-section">
+        <div class="row">
+            <!-- Product Cards -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="combo.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">3 Technical Events + Workshop</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLqIp_IgOhwqWQnUNP-KMPK96ucUBxpM-Lv_5hf14vqj_CEQ/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="Workshop.png" class="card-img-top" alt="Event 2">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">5G Hands on Workshop</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaEQbyvTwenxZwbKIhOuRrfPVijaY1fwNyOTSbM5AmRHf3iA/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="Code.png" class="card-img-top" alt="Event 6">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">Software Hackathon</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTMTDlL0oHj3kBpjPsjf2bAMzaWmcREQr0ecxxCBSRd3_9gw/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="Paper.png" class="card-img-top" alt="Event 3">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">Paper Presentation</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-m_FlWQ_C-XZsX5rbEBInYXPCQZ2NNr8y1Hw96g-Myex4Hg/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="Project.png" class="card-img-top" alt="Event 4">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">Project Presentation</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgcNrhJTNhNzMxbclEnEFyyDBCVuszEHHjAWPgU0kOHrsjpg/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="Idea.png" class="card-img-top" alt="Event 5">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">Ideathon</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9ievxQvh__XSFt3xEOeToFDJAmbEpGTtt1YClBVT2cdqbkA/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="line.jpeg" class="card-img-top" alt="Event 6">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">Line Follower</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUHvAbETUNwYvkfKjhZ3LlyQnzmCsowlHP-HETNQ9_0DhywQ/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="Circuit.png" class="card-img-top" alt="Event 6">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">Circuitrix</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLK9qgmmWshKom467bFMh33ohrGHbO-pt5ph1et-qNEYb9Lw/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="antenna.jpeg" class="card-img-top" alt="Event 6">
+                    <div class="card-body">
+                        <h4 class="ffw-bold">Antenna Design</h4>
+                        <div class="buttons">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSce2eAkxbyJ-d9MNY99ERFqEYGDtam128UgauW5oJuzec97Uw/viewform?usp=header"><button>REGISTER NOW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Scroll Hide Effect -->
+    <script>
+        let lastScrollTop = 0;
+        const topImage = document.getElementById("topImage");
+
+        window.addEventListener("scroll", function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll Down: Hide Image
+                topImage.classList.add("hidden");
+            } else {
+                // Scroll Up: Show Image
+                topImage.classList.remove("hidden");
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.querySelector(".menu-btn");
+            const offCanvas = document.getElementById("sidebar");
+
+            offCanvas.addEventListener("show.bs.offcanvas", function () {
+                menuButton.style.display = "none"; // Hide button when menu opens
+            });
+
+            offCanvas.addEventListener("hidden.bs.offcanvas", function () {
+                menuButton.style.display = "block"; // Show button when menu closes
+            });
+        });
+    </script>
+</body>
+</html>

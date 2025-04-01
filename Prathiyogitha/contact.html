@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* Fullscreen Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Sidebar */
+        .offcanvas {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        .offcanvas-body a {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .offcanvas-body a:hover {
+            background-color: #ff5722;
+        }
+
+        /* Sidebar Toggle Button */
+        .menu-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            font-size: 40px;
+            background: transparent;
+            border: none;
+            color: white;
+            z-index: 1050;
+        }
+
+        /* Top Image */
+        .top-image {
+            width: 30%;
+            display: block;
+            margin: 30px auto;
+        }
+
+        /* Card Container */
+        .team-card {
+            width: 310px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 20px;
+        }
+
+        /* Inner Card with Flip Effect */
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            box-shadow: 0px 0px 15px rgba(0, 170, 255, 0.4);
+            border-radius: 10px;
+        }
+
+        .team-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front & Back Sides */
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .card-front {
+            background: linear-gradient(125deg, #ffffff8b, #ffffff5e);
+            color: white;
+        }
+
+        .card-back {
+            background: linear-gradient(125deg, #ff5722, #ff9800);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        /* Image Styling */
+        .card-front img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            object-fit: cover;
+        }
+
+        /* Neon Glow Hover Effect */
+        .team-card:hover {
+            box-shadow: 0 0 15px #04f0f0e4;
+            transition: 0.4s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Top Image -->
+    <img src="our team.png" alt="Our Team" class="top-image">
+
+    <!-- Sidebar Toggle Button -->
+    <button class="btn menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+        ☰
+    </button>
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header">
+            <h4><button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button></h4>
+        </div>
+        <div class="offcanvas-body">
+            <h3><a href="home.html">Home</a></h3>
+            <h3><a href="events.html">Events & Workshop</a></h3>
+            <h3><a href="sponsors.html">Sponsors</a></h3>
+            <h3><a href="about.html">About Us</a></h3>
+            <h3><a href="#">Contact</a></h3>
+        </div>
+    </div>
+
+    <!-- Team Cards -->
+    <div class="container">
+        <!-- Row 1 (2 Cards) -->
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="GT Sir.jpg" alt="G.Thirunavukkarasu">
+                            <h3>G.THIRUNAVUKKARASU</h3>
+                            <p>FACULTY COORDINATOR</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 9489234282</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="CHAIR.jpg" alt="Viyashika K.M">
+                            <h3>VIYASHIKA K.M</h3>
+                            <p>CHAIRMAN</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 8778073864</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Top Image -->
+         <img src="STDC.png" alt="Top Banner" class="top-image" id="topImage">
+         <!-- Row 1 (2 Cards) -->
+         <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="SA1.png" alt="G.Thirunavukkarasu">
+                            <h3>LOKESH SARAVANAN</h3>
+                            <p>STUDENT AFFAIRS</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 8248776069</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="SA2.jpg" alt="Viyashika K.M">
+                            <h3>PRADEEKSHA</h3>
+                            <p>STUDENT AFFAIRS</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 9842737759</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Image -->
+        <img src="HEADCOORDINATORS.png" alt="Top Banner" class="top-image" id="topImage">
+
+        <!-- Row 2, 3, 4 (4 Cards Each) -->
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="SUBACC.jpg" alt="John Doe">
+                            <h3>SUBASRI A</h3>
+                            <p>PAPER PRESENTATION</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 8610143068</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="PPCC1.jpg" alt="Jane Smith">
+                            <h3>RITHANYA S</h3>
+                            <p>PAPER PRESENTATION</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 8778713121</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="YUCC.jpg" alt="Michael Lee">
+                            <h3>YUVAN SHANKAR</h3>
+                            <p>PROJECT PRESENTATION</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 8825471260</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="HCC.jpg" alt="Sarah Johnson">
+                            <h3>BOOBATHI RAJA</h3>
+                            <p>HACKATHON</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 8526768789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Row 2, 3, 4 (4 Cards Each) -->
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="CCC.jpg" alt="John Doe">
+                            <h3>KARTHICK PRIYA</h3>
+                            <p>CIRCUITRIX</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 6383310423</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="ICC.jpg" alt="Jane Smith">
+                            <h3>DHARSHINI R</h3>
+                            <p>IDEATHON</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 7904963803</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="ADCC.jpg" alt="Michael Lee">
+                            <h3>MALAVIKA V</h3>
+                            <p>ANTENNA DESIGN</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 7907647303</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="BOT EVENT CC.png" alt="Sarah Johnson">
+                            <h3>SUDARSAN S</h3>
+                            <p>BOT EVENTS</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 8778283409</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Image -->
+        <img src= "SOM.png" alt="Top Banner" class="top-image" id="topImage">
+
+        <!-- Row 2, 3, 4 (4 Cards Each) -->
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="MD.jpg" alt="John Doe">
+                            <h3>BARATH MD</h3>
+                            <p>SPONSORS / WEBSITE DEVELOPER</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 6369978859</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="AKS.jpg" alt="Jane Smith">
+                            <h3>AKASH V</h3>
+                            <p>CONTENT CREATOR</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 7708424178</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="SK.jpg" alt="ADITHYAN SK">
+                            <h3>ADITHYAN SK</h3>
+                            <p>CONTENT CREATOR</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 6374814379</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="team-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="DHARSHINIS.jpg" alt="DHARSHINI S">
+                            <h3>DHARSHINI S</h3>
+                            <p>EVENT FORM MANAGER</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Phone: +91 9524762021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- JavaScript for Scroll Hide Effect -->
+        <script>
+            let lastScrollTop = 0;
+            const topImage = document.getElementById("topImage");
+    
+            window.addEventListener("scroll", function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+                if (scrollTop > lastScrollTop) {
+                    topImage.classList.add("hidden");
+                } else {
+                    topImage.classList.remove("hidden");
+                }
+    
+                lastScrollTop = scrollTop;
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuButton = document.querySelector(".menu-btn");
+                const offCanvas = document.getElementById("sidebar");
+    
+                offCanvas.addEventListener("show.bs.offcanvas", function () {
+                    menuButton.style.display = "none";
+                });
+                offCanvas.addEventListener("hidden.bs.offcanvas", function () {
+                    menuButton.style.display = "block";
+                });
+            });
+        </script>
+</body>
+</html>

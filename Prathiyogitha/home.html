@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay Content */
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .typewriter h3 {
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            display: inline-block;
+            animation: typing 4s steps(40, end) infinite alternate, blink 1.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .buttons button {
+            padding: 12px 18px;
+            font-size: 16px;
+            border: none;
+            background-color: #ff5722;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .buttons button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Responsive Image */
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 190px;
+        }
+
+        .center-image img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        /* Sidebar */
+        .offcanvas {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+        }
+
+        .offcanvas-body a {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .offcanvas-body a:hover {
+            background-color: #ff5722;
+        }
+
+        /* Sidebar Button */
+        .menu-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            font-size: 35px;
+            background: transparent;
+            border: none;
+            color: white;
+            z-index: 1050;
+        }
+
+        /* Media Queries for Mobile Screens */
+        @media (max-width: 768px) {
+            .overlay {
+                top: 45%;
+                width: 95%;
+            }
+
+            .typewriter h3 {
+                font-size: 18px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buttons button {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .center-image img {
+                max-width: 90%;
+            }
+
+            .menu-btn {
+                font-size: 28px;
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="One Piece OST_ Overtaken EPIC VERSION (Drums of Liberation).mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Overlay Content -->
+    <div class="overlay">
+        <div class="typewriter">
+            <h3>Join Us At KEC's Premier Technical Symposium</h3>
+        </div>
+        <div class="buttons">
+            <a href="https://drive.google.com/drive/folders/1pTo65CU6vgtkKQUgdSesvMZIp8h6P6Qc?usp=sharing" download="SampleDocument.pdf">
+                <button>BROCHURE</button>
+            </a>
+            <a href="events.html">
+                <button>REGISTER</button>
+            </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPZVAbPDyfBqGLhKz9PGTdmh4tFTOslHAHc50hTqT_ciNBNA/viewform?usp=sharing">
+                <button>FOR STAY</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Centered Image -->
+    <div class="center-image">
+        <img src="Font.png" alt="Event Logo">
+    </div>
+
+    <!-- Sidebar Toggle Button -->
+    <button class="btn menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+        ☰
+    </button>
+
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+        <div class="offcanvas-header">
+            <h4><button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button></h4>
+        </div>
+
+        <div class="offcanvas-body">
+            <h3><a href="home.html">Home</a></h3>
+            <h3><a href="events.html">Events & Workshops</a></h3>
+            <h3><a href="sponsors.html">Sponsors</a></h3>
+            <h3><a href="about.html">About Us</a></h3>
+            <h3><a href="contact.html">Contact</a></h3>
+        </div>
+    </div>
+
+    <!-- JavaScript for Sidebar -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.querySelector(".menu-btn");
+            const offCanvas = document.getElementById("sidebar");
+
+            offCanvas.addEventListener("show.bs.offcanvas", function () {
+                menuButton.style.display = "none"; // Hide button when menu opens
+            });
+
+            offCanvas.addEventListener("hidden.bs.offcanvas", function () {
+                menuButton.style.display = "block"; // Show button when menu closes
+            });
+        });
+    </script>
+
+</body>
+</html>
